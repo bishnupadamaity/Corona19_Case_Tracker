@@ -13,8 +13,12 @@
 <body>
     <section class="container">
         <div class="container text-center mt-3">
-            <h2>Coronavirus Tracker</h2>
+            <h1>Coronavirus Tracker</h1>
             <p>This application lists the current number of cases reported across the globe.</p>
+        </div>
+        <div class="jumbotron">
+            <h1 class="display-4 text-center font-weight-bold text-primary" th:text="${totalReportedCases}"></h1>
+            <p class="lead text-center" >Total cases reported as of today</p>
         </div>
         <div class="container mt-4">
             <table class="table">
@@ -23,6 +27,7 @@
                     <th scope="col">Country</th>
                     <th scope="col">State</th>
                     <th scope="col">Total cases reported</th>
+                    <th scope="col">Changes since last day</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,7 +36,7 @@
                     <td th:text="${locationStat.country}"></td>
                     <td  th:text="${locationStat.state}"></td>
                     <td th:text="${locationStat.latestTotalCases}">0</td>
-
+                    <td th:text="${locationStat.diffPrevDay}"></td>
                 </tr>
                 </tbody>
             </table>
