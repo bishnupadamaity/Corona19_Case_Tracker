@@ -23,6 +23,9 @@ public class HomeController {
         int totalReportedCases = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();
         model.addAttribute("totalReportedCases",totalReportedCases);
 
+        int totalNewCases = allStats.stream().mapToInt(stat -> stat.getDiffPrevDay()).sum() ;
+        model.addAttribute("totalNewCases",totalNewCases);
+
         model.addAttribute("locationStats",allStats);
 
         return "index";

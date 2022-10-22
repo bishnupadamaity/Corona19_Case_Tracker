@@ -19,6 +19,14 @@
         <div class="jumbotron">
             <h1 class="display-4 text-center font-weight-bold text-primary" th:text="${totalReportedCases}"></h1>
             <p class="lead text-center" >Total cases reported as of today</p>
+            <hr class="my-4">
+            <div class="container text-center">
+                <p>
+                    <span>New cases reported since previous day</span>
+                    <span th:text="${totalNewCases}" class="text-center" ></span>
+                </p>
+            </div>
+
         </div>
         <div class="container mt-4">
             <table class="table">
